@@ -1,27 +1,55 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
+import { Items } from './components/Items';
+import { ItemType } from './types/ItemType';
+import { Comments } from './components/Comments';
 
-interface Props {
-  onClick: () => void;
-}
+export const App = () => {
+  const [items, setItems] = useState<ItemType[]>([]);
+  const [activeItem, setActiveItem] = useState<ItemType | null>(null);
 
-export const Provider: React.FC<Props> = React.memo(
-  ({ onClick, children }) => (
-    <button
-      type="button"
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  ),
-);
+  useEffect(() => {
+    const localeItems = localStorage.getItem('items');
+    const localeActiveItem = localStorage.getItem('activeItem');
 
-export const App: React.FC = () => {
+    if (localeItems) {
+      setItems(JSON.parse(localeItems));
+    }
+
+    if (localeActiveItem) {
+      setActiveItem(JSON.parse(localeActiveItem));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(items));
+  }, [items]);
+
+  useEffect(() => {
+    localStorage.setItem('activeItem', JSON.stringify(activeItem));
+  }, [activeItem]);
+
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>
-        <TodoList />
-      </Provider>
+    <div className="app">
+      <div className="app__info">
+        <div className="app__title">DAYRY APP</div>
+        <div className="app__subtitle">Comment whit no sense</div>
+      </div>
+
+      <main className="app__content">
+        <Items
+          items={items}
+          setItems={setItems}
+          activeItem={activeItem}
+          setActiveItem={setActiveItem}
+        />
+
+        <Comments
+          activeItem={activeItem}
+          setItems={setItems}
+          setActiveItem={setActiveItem}
+        />
+      </main>
     </div>
   );
 };

@@ -1,0 +1,55 @@
+@import "../../styles/main.scss";
+
+.comment-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__color {
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid #c2c2c2;
+    border-radius: 5px;
+  }
+
+  &__body {
+    resize: vertical;
+    border: 1px solid #c2c2c2;
+    border-radius: 5px;
+    height: 100%;
+    flex-grow: 2;
+    padding: 10px;
+    font-size: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+
+    @include hover(border-color #005685);
+
+    &:focus {
+      border-color: #005685;
+      outline: #a6dfff;
+      box-shadow: 0 0 0 3px #a6dfff;
+    }
+  }
+
+  &__button {
+    height: 70px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 10px;
+    transition: background-color 0.2s, border-color 0.2s;
+
+    @include hover(background-color #0069d9, border-color #0062cc);
+
+    &:active {
+      outline: #a6dfff;
+      box-shadow: 0 0 0 3px #a6dfff
+    }
+  }
+}

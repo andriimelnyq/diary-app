@@ -1,3 +1,30 @@
-.starter {
+.app {
   font-size: 18px;
+  display: flex;
+  min-height: 100vh;
+
+  &__info {
+    background-color: #383842;
+    padding: 30px;
+    text-align: center;
+  }
+
+  &__title {
+    color: white;
+    text-transform: uppercase;
+    font-size: 40px;
+  }
+
+  &__subtitle {
+    color: gray;
+  }
+
+  &__content {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+  }
 }

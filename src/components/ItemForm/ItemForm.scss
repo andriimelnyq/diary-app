@@ -1,0 +1,46 @@
+@import "../../styles/main.scss";
+
+.item-form {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 10px;
+
+  &__input {
+    border: 1px solid #c2c2c2;
+    border-radius: 5px;
+    height: 100%;
+    flex-grow: 2;
+    padding: 10px;
+    font-size: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+
+    @include hover(border-color #005685);
+
+    &:focus {
+      border-color: #005685;
+      outline: #a6dfff;
+      box-shadow: 0 0 0 3px #a6dfff;
+    }
+  }
+
+  &__button {
+    height: 100%;
+    border: 1px solid #17a2b8;
+    background-color: #17a2b8;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 10px;
+    transition: background-color 0.2s, border-color 0.2s;
+
+    @include hover(background-color #117a8b, border-color #014040);
+
+    &:active {
+      outline: rgba(23,162,184,.5);
+      box-shadow: 0 0 0 3px rgba(23,162,184,.5);
+    }
+  }
+}

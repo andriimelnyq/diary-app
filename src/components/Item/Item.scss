@@ -1,0 +1,66 @@
+@import "../../styles/main.scss";
+
+.item {
+  border: 1px solid #c2c2c2;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+
+  &:not(:last-child) {
+    border-bottom: none;
+  }
+
+  &:first-child {
+    border-radius: 3px 3px 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 3px 3px;
+  }
+
+  &:only-child {
+    border-radius: 3px;
+  }
+
+
+  &__container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__comments-length {
+    background-color: #17a2b8;
+    text-align: center;
+    color: white;
+    border-radius: 40% / 50%;
+    width: 26px;
+  }
+
+  &__button {
+    padding: 10px;
+    color: #dc3545;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #dc3545;
+    cursor: pointer;
+
+    @include hover(background-color #dc3545, color white);
+  }
+
+  &--selected {
+    &::before {
+      content: '';
+      width: 4px;
+      height: 100%;
+      background-color: rgb(255, 0, 200);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

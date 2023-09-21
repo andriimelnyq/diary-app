@@ -1,9 +1,14 @@
-# React TypeScript Starter Pack
+# DIARY APP
+[DEMO](https://andriimelnyq.github.io/diary-app/)
 
-To use this template click `Use this template`
+The application allows you to create items and comment on them
 
-### Available Scripts
+### Used technologies
+- React.
+- TypeScript.
+- JS.
+- SCSS.
+- HTML.
 
-`Deploy` - available to deploy your application to gh-pages
-
-`SCSS Preprocessor` - available to write your styles with modern style language
+### Instructions
+For run it on your machine: just `fork` this repo. Then `clone` it to your computer and run `npm install` (npm i). After use `npm run dev`.
